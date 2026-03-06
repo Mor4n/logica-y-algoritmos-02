@@ -5,14 +5,14 @@ let contactos = [
         nombre: "Reyna",
         puesto: "CEO",
         empresa: "Paradox",
-        correo:"adriana@gmail.com",
+        correo:"reyna@gmail.com",
         numero:6334353530,
     },
     {
         nombre: "Alexs",
         puesto: "Marketing",
         empresa: "Paradox",
-        correo:"sergio@gmail.com",
+        correo:"alexs@gmail.com",
         numero:6735433738,
     },{
         nombre: "Sofia",
@@ -21,7 +21,7 @@ let contactos = [
         correo:"sofia@gmail.com",
         numero:6234353565,
     }
-]
+];
 
 // 2. 
 const generarTarjeta = (contacto) =>{
@@ -35,13 +35,12 @@ const generarTarjeta = (contacto) =>{
     **********************
     `
     
-}
+};
 
 // 3.
 
 for (let i = 0; i < contactos.length; i++) {
     
-    console.log();
     
     console.log(generarTarjeta(contactos[i]));
     
