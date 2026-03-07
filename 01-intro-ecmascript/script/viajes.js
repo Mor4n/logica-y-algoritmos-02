@@ -61,9 +61,16 @@ export const mostrarItinerario = () => {
 
 const calcularDescuento = (destino,costoBase, cantidadPersonas) =>{
 
-    // si son 2 personas, que haga un 10% de descuento
-    if (cantidadPersonas === 2) costoBase = (costoBase-(costoBase*.10)); // por ejemplo, (500-(50));
-    
+    // arreglo de destinos en oferta
+    const ofertaDestinos = ["Paris","New York"]; 
+
+    // si el destino seleccionado se encuentra en el arreglo de destinos en oferta, que se le aplique un descuento del 5%
+    if (ofertaDestinos.includes(destino)) costoBase = (costoBase-(costoBase*.05));
+
+    // si son 2 personas o más, que haga un 5% de descuento adicional
+    if (cantidadPersonas >= 2) costoBase = (costoBase-(costoBase*.05)); // por ejemplo, (500-(50));
+
+
     
 
     // devuelvo el costoBase con el descuento aplicado
