@@ -5,20 +5,21 @@
 const destinos = [];
 
 // Función para registrar un destino de viaje
-export const registrarDestino =(destino, fecha, transporte) => {
+export const registrarDestino =(destino, fecha, transporte,cantidadPersonas) => {
     // TODO: Crear un objeto con los datos del destino
     const nuevoViaje = {
         destino: destino,
         fecha: fecha,
         transporte: transporte,
-        costo: calcularCosto(destino, transporte)
+        cantidadPersonas : cantidadPersonas,
+        costo: calcularCosto(destino, transporte,cantidadPersonas)
     };
 
     destinos.push(nuevoViaje);
 }
 
 // Función para calcular el costo del viaje
-const calcularCosto = (destino, transporte) => {
+const calcularCosto = (destino, transporte,cantidadPersonas) => {
     let costoBase = 0;
 
     // Costo base por destino
@@ -36,6 +37,8 @@ const calcularCosto = (destino, transporte) => {
     } else if (transporte === "Tren") {
         costoBase += 100;
     }
+
+    costoBase = calcularDescuento(destino, costoBase, cantidadPersonas)
 
     return costoBase;
 }
@@ -56,6 +59,13 @@ export const mostrarItinerario = () => {
 
 // Función para calcular el descuento
 
-const calcularDescuento = (personas) =>{
+const calcularDescuento = (destino,costoBase, cantidadPersonas) =>{
 
+    // si son 2 personas, que haga un 10% de descuento
+    if (cantidadPersonas === 2) costoBase = (costoBase-(costoBase*.10)); // por ejemplo, (500-(50));
+    
+    
+
+    // devuelvo el costoBase con el descuento aplicado
+    return costoBase;
 }
