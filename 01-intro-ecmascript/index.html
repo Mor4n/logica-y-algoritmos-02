@@ -7,7 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     
+    
+    <main>
+
+        <!-- formulario -->
+        <form>
+
+            <!-- lista desplegable -->
+            <select name="lista-destinos" id="lista-destinos">
+                <option selected="true" disabled>Seleccione una opción</option>
+            </select>
+            
+            <!-- radiobuttons con los medios de transporte -->
+            <input type="radio" name="transporte" id="input-tren" value="Tren">
+            <label for="input-tren">Tren</label>
+
+            <input type="radio" name="transporte" id="input-avion" value="Avión">
+            <label for="input-avion">Avión</label>
+
+
+            <button type="submit">Enviar</button>
+
+
+        </form>
+
+    </main>
+
     <script type="module" src="./script/app.js"></script>
 </body>
 </html>

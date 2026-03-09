@@ -5,7 +5,7 @@
 const destinos = [];
 
 // objeto de catalogo de destinos con precios
-const catalogoDestinos = {
+export const catalogoDestinos = {
     "Paris": 500,
     "Londres": 400,
     "New York": 600,
