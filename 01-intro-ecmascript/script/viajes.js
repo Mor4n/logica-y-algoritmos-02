@@ -21,6 +21,7 @@ export const registrarDestino =(destino, fecha, transporte,cantidadPersonas) => 
 // Función para calcular el costo del viaje
 const calcularCosto = (destino, transporte,cantidadPersonas) => {
     let costoBase = 0;
+    let costoTotal = 0;
 
     // Costo base por destino
     if (destino === "Paris") {
@@ -37,10 +38,13 @@ const calcularCosto = (destino, transporte,cantidadPersonas) => {
     } else if (transporte === "Tren") {
         costoBase += 100;
     }
+    
+    costoTotal = costoBase*cantidadPersonas; // Calculo la cantidad total
 
-    costoBase = calcularDescuento(destino, costoBase, cantidadPersonas)
+    costoTotal = calcularDescuento(destino, costoTotal, cantidadPersonas) // Se aplica el descuento
 
-    return costoBase;
+
+    return costoTotal;
 }
 
 // Función para mostrar el itinerario de los viajes registrados
@@ -59,20 +63,19 @@ export const mostrarItinerario = () => {
 
 // Función para calcular el descuento
 
-const calcularDescuento = (destino,costoBase, cantidadPersonas) =>{
+const calcularDescuento = (destino,costoTotal, cantidadPersonas) =>{
 
     // arreglo de destinos en oferta
     const ofertaDestinos = ["Paris","New York"]; 
 
     // si el destino seleccionado se encuentra en el arreglo de destinos en oferta, que se le aplique un descuento del 5%
-    if (ofertaDestinos.includes(destino)) costoBase = (costoBase-(costoBase*.05));
+    if (ofertaDestinos.includes(destino)) costoTotal = (costoTotal-(costoTotal*.05));
 
     // si son 2 personas o más, que haga un 5% de descuento adicional
-    if (cantidadPersonas >= 2) costoBase = (costoBase-(costoBase*.05)); // por ejemplo, (500-(50));
-
+    if (cantidadPersonas >= 2) costoTotal = (costoTotal-(costoTotal*.05)); 
 
     
 
-    // devuelvo el costoBase con el descuento aplicado
-    return costoBase;
+    // devuelvo el costoTotal con el descuento aplicado
+    return costoTotal;
 }
