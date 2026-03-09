@@ -6,18 +6,20 @@ import { registrarDestino, mostrarItinerario, catalogoDestinos } from "./viajes.
 // Obtengo la lista desplegable de HTML
 const listaDestinos = document.querySelector("#lista-destinos");
 
+const formulario = document.querySelector("#formulario");
+
+
 // Iniciar la aplicación
 const iniciarApp = () => {
 
     // cargado de cada del objeto de destinos en el menú desplegable
 
     for (const destino in catalogoDestinos) {
-        
-        listaDestinos.innerHTML += `<option value="${destino}">${destino}</option>`;
+
+        listaDestinos.innerHTML += `<option value="${destino}" class="option-destino">${destino}</option>`;
 
     }
 
-    
 
 
     // Ejemplo de cómo registrar destinos
@@ -28,5 +30,17 @@ const iniciarApp = () => {
     mostrarItinerario();
 }
 
+// event listener del formulario
+formulario.addEventListener("submit" ,(e) =>{
+
+
+    e.preventDefault();
+    console.log(listaDestinos.value);
+    
+
+})
+
 // Ejecutar la aplicación
 iniciarApp();
+
+

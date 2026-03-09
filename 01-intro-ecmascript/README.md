@@ -48,3 +48,4 @@ https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/select
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_radio
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for...in
 https://stackoverflow.com/questions/22033922/how-to-show-disabled-html-select-option-by-default
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_value
