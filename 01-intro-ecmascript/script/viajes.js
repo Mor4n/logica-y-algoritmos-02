@@ -4,6 +4,21 @@
 // Array para guardar los destinos
 const destinos = [];
 
+// objeto de catalogo de destinos con precios
+const catalogoDestinos = {
+    "Paris":500,
+    "Londres":400,
+    "New York":600
+
+}
+
+// objeto de tipos de transporte
+const tiposTransporte = {
+    "Avión":200,
+    "Tren":100,
+}
+
+
 // Función para registrar un destino de viaje
 export const registrarDestino =(destino, fecha, transporte,cantidadPersonas) => {
     // TODO: Crear un objeto con los datos del destino
@@ -24,21 +39,14 @@ const calcularCosto = (destino, transporte,cantidadPersonas) => {
     let costoTotal = 0;
 
     // Costo base por destino
-    if (destino === "Paris") {
-        costoBase = 500;
-    } else if (destino === "Londres") {
-        costoBase = 400;
-    } else if (destino === "New York") {
-        costoBase = 600;
-    }
+    
+    costoBase = catalogoDestinos[destino]; // del objeto catalogoDestinos, obtengo el precio al buscar la clave que sea de destino
+
 
     // Costo adicional por tipo de transporte
-    if (transporte === "Avión") {
-        costoBase += 200;
-    } else if (transporte === "Tren") {
-        costoBase += 100;
-    }
-    
+
+    costoBase += tiposTransporte[transporte]; // igualmente, del objeto tipoTransporte obtengo el valor al encontrar el transporte coincidente, esto se suma al costo base
+   
     costoTotal = costoBase*cantidadPersonas; // Calculo la cantidad total
 
     costoTotal = calcularDescuento(destino, costoTotal, cantidadPersonas) // Se aplica el descuento
