@@ -50,3 +50,4 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for...
 https://stackoverflow.com/questions/22033922/how-to-show-disabled-html-select-option-by-default
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_value
 https://www.youtube.com/watch?v=s5OEuGoQRBI
+https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button

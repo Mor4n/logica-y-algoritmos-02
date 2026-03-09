@@ -11,23 +11,11 @@ const listaCantidadPersonas = document.querySelector("#lista-cantidad-personas")
 // obtengo el valor de la fecha seleccionada
 const inputDate = document.querySelector("#input-date");
 
+
 // formulario para añadir el event listener y hacer su proceso
 const formulario = document.querySelector("#formulario");
 
 
-// Iniciar la aplicación
-const iniciarApp = () => {
-
-    // cargar selects o listas desplegables
-    cargarListasDesplegables();
-
-    // Ejemplo de cómo registrar destinos
-    registrarDestino("Agua Prieta", "2024-06-15", "Avión", 2);
-    registrarDestino("Londres", "2024-07-01", "Tren", 1);
-
-    // Mostrar el itinerario de los viajes
-    mostrarItinerario();
-}
 
 const cargarListasDesplegables = () => {
 
@@ -53,16 +41,37 @@ const cargarListasDesplegables = () => {
 // event listener del formulario
 formulario.addEventListener("submit", (e) => {
     
-    const fecha = new Date(`${inputDate.value}T00:00`).toDateString(); // Formateo de fecha 
-    
     e.preventDefault();
-    console.log(listaDestinos.value);
-    console.log(listaCantidadPersonas.value);
-    console.log(fecha);
-    
+
+    const fecha = new Date(`${inputDate.value}T00:00`).toDateString(); // Formateo de fecha 
+
+    // obtengo valor del radiobutton seleccionado
+    const inputTransporte = document.querySelector('input[name="transporte"]:checked');
+
+    registrarDestino(listaDestinos.value, fecha,inputTransporte.value,listaCantidadPersonas.value);
+
+    // console.log(listaDestinos.value);
+    // console.log(listaCantidadPersonas.value);
+    // console.log(fecha);
+    mostrarItinerario();
 
 
 })
+
+// Iniciar la aplicación
+const iniciarApp = () => {
+
+    // cargar selects o listas desplegables
+    cargarListasDesplegables();
+
+    // Ejemplo de cómo registrar destinos
+    // registrarDestino("Agua Prieta", "2024-06-15", "Avión", 2);
+    // registrarDestino("Londres", "2024-07-01", "Tren", 1);
+
+    // Mostrar el itinerario de los viajes
+    // mostrarItinerario();
+}
+
 
 // Ejecutar la aplicación
 iniciarApp();
