@@ -16,16 +16,31 @@
         <form id="formulario">
 
             <!-- lista desplegable -->
+            <label for="lista-destinos">Destinos disponibles:</label>
             <select name="lista-destinos" id="lista-destinos">
+                <option selected="true" disabled>Seleccione una opción</option>
+            </select>
+
+            <!-- fecha -->
+            <label for="input-date">Fecha</label>
+            <input type="date" name="fecha" id="input-date">
+
+            <!-- cantidad de personas -->
+            <label for="lista-personas">Cantidad de personas:</label>
+            <select name="lista-personas" id="lista-personas">
                 <option selected="true" disabled>Seleccione una opción</option>
             </select>
             
             <!-- radiobuttons con los medios de transporte -->
-            <input type="radio" name="transporte" id="input-tren" value="Tren">
-            <label for="input-tren">Tren</label>
+            <fieldset>
+                <legend>Tipos de transporte:</legend>
+            
+                <input type="radio" name="transporte" id="input-tren" value="Tren">
+                <label for="input-tren">Tren</label>
 
-            <input type="radio" name="transporte" id="input-avion" value="Avión">
-            <label for="input-avion">Avión</label>
+                <input type="radio" name="transporte" id="input-avion" value="Avión">
+                <label for="input-avion">Avión</label>
+            </fieldset>
 
 
             <button type="submit">Enviar</button>
