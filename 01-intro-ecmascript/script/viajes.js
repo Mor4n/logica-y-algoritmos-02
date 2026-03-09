@@ -1,5 +1,4 @@
 
-// viajes.js
 
 // Array para guardar los destinos
 const destinos = [];
@@ -103,7 +102,6 @@ const calcularDescuento = (destino, costoTotal, cantidadPersonas) => {
         return costoTotal = (costoTotal - (costoTotal * .05));
 
     }
-    
 
     // devuelvo el costoTotal si ninguno de los anteriores se cumple
     return costoTotal;
