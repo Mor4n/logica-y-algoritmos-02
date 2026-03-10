@@ -1,7 +1,9 @@
 
 
 // Array para guardar los destinos
-const destinos = [];
+let destinos = [];
+
+const contenedorViajes = document.querySelector(".contenedor-viajes");
 
 // objeto de catalogo de destinos con precios
 export const catalogoDestinos = {
@@ -59,15 +61,25 @@ const calcularCosto = (destino, transporte, cantidadPersonas) => {
 
 // Función para mostrar el itinerario de los viajes registrados
 export const mostrarItinerario = () => {
+    contenedorViajes.innerHTML = "";
     // TODO: Recorrer el arreglo de destinos y mostrar la información de cada uno
     for (let i = 0; i < destinos.length; i++) {
+
+        
         const viaje = destinos[i];
-        console.log("Destino: " + viaje.destino);
-        console.log("Fecha: " + viaje.fecha);
-        console.log("Transporte: " + viaje.transporte);
-        console.log("Personas: " + viaje.cantidadPersonas);
-        console.log("Costo: $" + viaje.costo);
-        console.log("---------------------------");
+        contenedorViajes.innerHTML += `
+        <div class="card-viaje">
+            <h3 class="viaje-titulo">Destino: <span class="viaje-dato">${viaje.destino}</span></h3>
+            <h3 class="viaje-titulo">Fecha: <span class="viaje-dato">${viaje.fecha}</span></h3>
+            <h3 class="viaje-titulo">Transporte: <span class="viaje-dato">${viaje.transporte}</span></h3>
+            <h3 class="viaje-titulo">Personas: <span class="viaje-dato">${viaje.cantidadPersonas}</span></h3>
+            <h3 class="viaje-titulo">Costo: <span class="viaje-dato">$ ${viaje.costo}</span></h3>
+        </div>
+        `;
+
+        // Lo añado a local storage
+        localStorage.setItem("destinos", JSON.stringify(destinos));
+
     }
 }
 
@@ -106,3 +118,8 @@ const calcularDescuento = (destino, costoTotal, cantidadPersonas) => {
     // devuelvo el costoTotal si ninguno de los anteriores se cumple
     return costoTotal;
 }
+
+// cargar los destinos existentes al iniciar la página
+destinos = JSON.parse(localStorage.getItem("destinos")) || [];
+// igualmente se manda a llamar la función para mostrar los destinos que existan en el local storage
+mostrarItinerario();
