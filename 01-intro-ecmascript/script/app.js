@@ -40,13 +40,31 @@ formulario.addEventListener("submit", (e) => {
     
     e.preventDefault();
 
-    // Formateo de fecha 
-    const fecha = new Date(`${inputDate.value}T00:00`).toDateString(); 
-
     // obtengo valor del radiobutton seleccionado
     const inputTransporte = document.querySelector('input[name="transporte"]:checked');
 
+    // verificación que esté todo con datos
+    if(listaDestinos.selectedIndex==0|| inputDate.value==""||
+        listaCantidadPersonas.selectedIndex==0 || !inputTransporte
+
+     ){
+        return alert("Por favor, seleccione todos los campos para registrar su boleto");
+    }
+
+    // Formateo de fecha 
+    const fecha = new Date(`${inputDate.value}T00:00`).toDateString(); 
+
+    
+
     registrarDestino(listaDestinos.value, fecha,inputTransporte.value,listaCantidadPersonas.value);
+
+    // reinicio los valores
+
+    inputDate.value ="";
+    listaDestinos.selectedIndex = 0;
+    listaCantidadPersonas.selectedIndex = 0;
+    inputTransporte.checked = false;
+    
 
     mostrarItinerario();
 

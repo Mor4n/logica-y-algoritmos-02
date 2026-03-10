@@ -2,6 +2,7 @@
     --primario: #ff7032;
     --oscuro: black;
     --blanco: white;
+    --fondo-boletos:#fbba9b;
 }
 
 *{
@@ -96,6 +97,54 @@ fieldset label{
 }
 
 /* parte de boletos adquiridos */
+.contenedor-viajes{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px;
+    background-color: var(--fondo-boletos);
+    gap: 25px;
+}
+
+.contenedor-viajes h2{
+    margin: 10px 0px;
+    font-weight: 600;
+    color: var(--blanco);
+    font-size: 1.5rem;
+    border-bottom: 3px solid var(--primario);
+    padding-bottom: 10px;
+    width: fit-content;
+}
+
+.card-viaje{
+    background-color: var(--blanco);
+    border-left: 5px solid var(--primario);
+    border-radius: 0 15px 15px 0;
+    padding: 22px 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    transition: box-shadow 0.25s ease;
+}
+
+.card-viaje:hover{
+    box-shadow: 0px 6px 20px rgba(255, 77, 0, 0.747);
+}
+
+.viaje-titulo{
+    color: var(--primario);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.viaje-dato{
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
 
 
 

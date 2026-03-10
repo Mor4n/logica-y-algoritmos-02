@@ -81,6 +81,9 @@ export const mostrarItinerario = () => {
         // Lo añado a local storage
         localStorage.setItem("destinos", JSON.stringify(destinos));
 
+        
+
+
     }
 }
 
