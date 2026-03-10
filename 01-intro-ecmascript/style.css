@@ -2,7 +2,7 @@
     --primario: #ff7032;
     --oscuro: black;
     --blanco: white;
-    --fondo-boletos:#fbba9b;
+    --fondo:#fbba9b;
 }
 
 *{
@@ -96,12 +96,69 @@ fieldset label{
     font-weight: 750;
 }
 
+/* parte de descuentos */
+
+.seccion-descuentos{
+    padding: 50px 60px;
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+.seccion-descuentos h2{
+    font-weight: 600;
+    color: var(--oscuro);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.descuentos{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-descuento{
+    background-color: var(--fondo);
+    border-radius: 15px;
+    padding: 30px 25px;
+    width: 250px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.25s ease;
+}
+
+.card-descuento:hover{
+    box-shadow: 0px 6px 20px rgba(255, 111, 50, 0.603);
+}
+
+.descuento-porcentaje{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blanco);
+}
+
+.descuento-titulo{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--oscuro);
+    margin: 10px 0 8px;
+}
+
+.descuento-destinos{
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 400;
+}
+
+
+
+
 /* parte de boletos adquiridos */
 .contenedor-viajes{
     display: flex;
     flex-direction: column;
     padding: 50px 60px;
-    background-color: var(--fondo-boletos);
+    background-color: var(--fondo);
     gap: 25px;
 }
 
