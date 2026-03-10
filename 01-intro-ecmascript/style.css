@@ -15,22 +15,43 @@ body{
 }
 
 header{
-
+    width: 100%;
 }
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 30px 10px;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+a{
+    padding-right: 30px;
+    text-decoration: none;
+    color: var(--oscuro);
+    font-weight: 500;
+}
+
 #img-logo{
     width: 100px;
 }
 
 main{
-    max-width: 1wh;
+    max-width: 100%;
 }
 
 #formulario{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     /* border: 1px solid red; */
     background-color: #f4f4f4;
+    padding: 20px;
+    gap: 10px;
 }
 
 input,select{
@@ -74,3 +95,40 @@ fieldset label{
     font-weight: 750;
 }
 
+/* parte de boletos adquiridos */
+
+
+
+
+@media (max-width: 1366px) {
+    input, select {
+        margin: 20px;
+        padding: 10px 15px;
+    }
+
+    fieldset {
+        margin: 20px;
+    }
+
+    fieldset label {
+        margin: 10px;
+    }
+
+    nav {
+        padding: 20px 20px 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    input, select {
+        margin: 10px;
+    }
+
+    fieldset {
+        margin: 10px;
+    }
+
+    #formulario {
+        flex-direction: column;
+    }
+}

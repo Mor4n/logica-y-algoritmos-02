@@ -61,7 +61,8 @@ const calcularCosto = (destino, transporte, cantidadPersonas) => {
 
 // Función para mostrar el itinerario de los viajes registrados
 export const mostrarItinerario = () => {
-    contenedorViajes.innerHTML = "";
+        
+    contenedorViajes.innerHTML = "<h2>Itinerario de viajes</h2>";
     // TODO: Recorrer el arreglo de destinos y mostrar la información de cada uno
     for (let i = 0; i < destinos.length; i++) {
 
