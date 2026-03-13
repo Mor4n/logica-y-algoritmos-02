@@ -4,7 +4,9 @@ const lista_compras_contenedor = document.querySelector("#lista-compras-contened
 const seccion_productos = document.querySelector("#seccion-productos");
 const contenedor_productos = document.querySelector("#compras-tbody");
 const vaciar_lista = document.querySelector("#vaciar-lista");
-let listaProductos = [];
+let listaDeCompras = [];
+
+
 
 
 // eliminar producto
@@ -16,9 +18,9 @@ const eliminarProducto = (e) =>{
         
         const productoId = e.target.getAttribute("data-id");
         
-        listaProductos = listaProductos.filter( producto => producto.id_producto!==productoId );
+        listaDeCompras = listaDeCompras.filter( producto => producto.id_producto!==productoId );
         
-        mostrarProductos();
+        mostrarLista();
     }
 
 }
@@ -29,30 +31,27 @@ const eliminarProducto = (e) =>{
 const agregarProducto = (producto) =>{
 
     // verifico con some de los ejercicios que hicimos
-    const estaDuplicado = listaProductos.some( productoLista => productoLista.nombre == producto.nombre);
+    const estaDuplicado = listaDeCompras.some( productoLista => productoLista.nombre == producto.nombre);
         
     // si está duplicado mando una alerta, si no, lo agrego
     if(estaDuplicado){
         alert(`Producto ${producto.nombre} de agregarse, estaría duplicado, por lo tanto no se agregará`)
     }
     else{
-        listaProductos.push(producto);
-        console.log(listaProductos);
-        mostrarProductos();
+        listaDeCompras.push(producto);
+        console.log(listaDeCompras);
+        mostrarLista();
     }
-
-    
-    
 
 }
 
 
-const mostrarProductos= () =>{
+const mostrarLista= () =>{
     // limpio lo que tiene el html para evitar que se duplique
     contenedor_productos.innerHTML=``;
 
     // inserto los productos a la lista
-    listaProductos.forEach( producto => contenedor_productos.innerHTML +=`
+    listaDeCompras.forEach( producto => contenedor_productos.innerHTML +=`
         <tr>
         
             <td>
@@ -66,7 +65,7 @@ const mostrarProductos= () =>{
             </td>
             <td>
             <button class="lista-producto-borrar" data-id="${producto.id_producto}">
-            BORRAAAAR
+            Borrar producto
             </button>
             </td>
             
@@ -109,13 +108,17 @@ const obtenerProducto = (e) =>{
 
 }
 
-
-
+// para inicializar los event listeners
 const iniciarEvents = () =>{
     
     // a cada producto del listado, si se da clic, va a poderse agregar a la lista
     seccion_productos.addEventListener("click", obtenerProducto);
     contenedor_productos.addEventListener("click", eliminarProducto);
+    vaciar_lista.addEventListener("click", () =>{
+        // reseteo de arreglo
+        listaDeCompras = [];
+        mostrarLista();
+    });
     
 }
 
