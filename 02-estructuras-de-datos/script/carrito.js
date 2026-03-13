@@ -7,6 +7,23 @@ const vaciar_lista = document.querySelector("#vaciar-lista");
 let listaProductos = [];
 
 
+// eliminar producto
+
+const eliminarProducto = (e) =>{
+    
+    
+    if(e.target.classList.contains("lista-producto-borrar")){
+        
+        const productoId = e.target.getAttribute("data-id");
+        
+        listaProductos = listaProductos.filter( producto => producto.id_producto!==productoId );
+        
+        mostrarProductos();
+    }
+
+}
+
+
 // agregar producto al arreglo
 
 const agregarProducto = (producto) =>{
@@ -48,8 +65,8 @@ const mostrarProductos= () =>{
             <p class="lista-producto-precio" >${producto.precio} </p>
             </td>
             <td>
-            <button class="lista-producto-borrar" data-id="${producto.id}">
-            <i class="fa-solid fa-trash" style="color: rgb(204, 38, 38);"></i>
+            <button class="lista-producto-borrar" data-id="${producto.id_producto}">
+            BORRAAAAR
             </button>
             </td>
             
@@ -64,7 +81,6 @@ const mostrarProductos= () =>{
 // extraer info del producto
 
 const extraerDatos = (producto) => {
-    console.log(producto);
 
     const producto_info = {
         imagen: producto.querySelector("img").src,
@@ -99,6 +115,7 @@ const iniciarEvents = () =>{
     
     // a cada producto del listado, si se da clic, va a poderse agregar a la lista
     seccion_productos.addEventListener("click", obtenerProducto);
+    contenedor_productos.addEventListener("click", eliminarProducto);
     
 }
 
