@@ -16,7 +16,7 @@ const agregarProducto = (producto) =>{
         
     // si está duplicado mando una alerta, si no, lo agrego
     if(estaDuplicado){
-        alert(`Producto ${producto.nombre} está duplicado`)
+        alert(`Producto ${producto.nombre} de agregarse, estaría duplicado, por lo tanto no se agregará`)
     }
     else{
         listaProductos.push(producto);
@@ -47,6 +47,12 @@ const mostrarProductos= () =>{
             <td>
             <p class="lista-producto-precio" >${producto.precio} </p>
             </td>
+            <td>
+            <button class="lista-producto-borrar" data-id="${producto.id}">
+            <i class="fa-solid fa-trash" style="color: rgb(204, 38, 38);"></i>
+            </button>
+            </td>
+            
 
         </tr>
         `);
@@ -64,6 +70,7 @@ const extraerDatos = (producto) => {
         imagen: producto.querySelector("img").src,
         nombre: producto.querySelector(".producto-titulo").textContent,
         precio: producto.querySelector(".producto-precio").textContent,
+        id_producto: producto.querySelector("button").getAttribute("data-id"),
     }
     
     agregarProducto(producto_info);

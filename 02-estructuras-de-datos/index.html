@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
     
@@ -18,6 +20,8 @@
                         <th>Imagen</th>
                         <th>Producto</th>
                         <th>Precio</th>
+                        <th></th> 
+                        <!-- este th final es para el botón de eliminar -->
                 </thead>
                 <!-- aqui voy a colocar cada producto -->
                 <tbody id="compras-tbody">
@@ -39,25 +43,25 @@
                 <img src="https://i5.walmartimages.com/asr/5a437154-e69e-455a-94b1-3526d4d89a76.c2b1e1930608a4802d602cfdb13bbfa6.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Imagen de Pringles" class="producto-img">
                 <h3 class="producto-titulo">Pringles</h3>
                 <p class="producto-precio">$51.40</p>
-                <button class="producto-agregar">Agregar a la lista</button>
+                <button class="producto-agregar" data-id="1">Agregar a la lista</button>
             </div>
             <div class="card-producto">
                 <img src="https://i5-mx.walmartimages.com/mg/images/product-images/img_large/00750101116763l.jpg" alt="Imagen de Pizzerolas" class="producto-img">
                 <h3 class="producto-titulo">Pizzerolas</h3>
                 <p class="producto-precio">$29.45</p>
-                <button class="producto-agregar">Agregar a la lista</button>
+                <button class="producto-agregar" data-id="2">Agregar a la lista</button>
             </div>
             <div class="card-producto">
                 <img src="https://media.istockphoto.com/id/504384796/es/foto/maduros-frescos-tangerines.jpg?s=612x612&w=0&k=20&c=PqIgR6aGkqAFl9y9B6dNd4HoMd37WigyAg2JKZ2_F0I=" alt="Imagen de mandarina" class="producto-img">
                 <h3 class="producto-titulo">Mandarina</h3>
                 <p class="producto-precio">$6.00</p>
-                <button class="producto-agregar">Agregar a la lista</button>
+                <button class="producto-agregar" data-id="3">Agregar a la lista</button>
             </div>
             <div class="card-producto">
                 <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/6fcd5da3-4494-4afb-927b-bf2344ecee3f.e0718279add087004d062ea46263c0c1.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Imagen de Coca-Cola" class="producto-img">
                 <h3 class="producto-titulo">Refresco Victoria Grosella💕</h3>
                 <p class="producto-precio">$18.00</p>
-                <button class="producto-agregar">Agregar a la lista</button>
+                <button class="producto-agregar" data-id="4">Agregar a la lista</button>
             </div>
 
 
@@ -66,6 +70,7 @@
     </main>
 
     <script src="./script/carrito.js"></script>
+    <script src="https://kit.fontawesome.com/4c1a0d118c.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
