@@ -13,13 +13,21 @@ const productos = [
 
 // Usa filter() para obtener los productos que cuesten menos de $100.
 
-productosMenor100 = productos.filter( producto => producto<100);
+productosMenor100 = productos.filter( producto => producto.precio<100);
 
-productos.forEach( producto => console.log(`Producto menor a $100: - Nombre: ${producto.nombre} - $${producto.precio} - Categoría: ${producto.categoria}`))
+productosMenor100.forEach( producto => console.log(`Producto menor a $100: - Nombre: ${producto.nombre} - $${producto.precio} - Categoría: ${producto.categoria}`))
 
 
 
 // Usa sort() para ordenar esos productos alfabéticamente por su nombre.
+
+productosAlfabeticamente = productos.sort( (a,b) => a.nombre>b.nombre ? 1:-1);
+
+productosAlfabeticamente.forEach( producto => console.log(`Producto de forma alfabetica: ${producto.nombre}`))
+
+
+
+
 
 // Usa map() para generar un nuevo arreglo que contenga solo los nombres de los productos.
 
