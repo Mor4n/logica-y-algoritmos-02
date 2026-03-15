@@ -31,6 +31,11 @@ productosAlfabeticamente.forEach( producto => console.log(`Producto de forma alf
 
 // Usa map() para generar un nuevo arreglo que contenga solo los nombres de los productos.
 
+productosSoloNombres = productos.map( prod => prod.nombre);
+
+console.log(`Arreglo con solo nombre de productos:`, productosSoloNombres);
+
+
 // Muestra los resultados de la aplicación de cada métiodo en consola.
 
 // (Oppcional) Incluye alguno de los métodos faltantes (reduce, some, every, includes, etc.) con algún caso de uso en este ejemplo, usa tu creatividad.
