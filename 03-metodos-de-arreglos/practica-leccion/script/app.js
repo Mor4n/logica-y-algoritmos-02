@@ -39,3 +39,17 @@ console.log(`Arreglo con solo nombre de productos:`, productosSoloNombres);
 // Muestra los resultados de la aplicación de cada métiodo en consola.
 
 // (Oppcional) Incluye alguno de los métodos faltantes (reduce, some, every, includes, etc.) con algún caso de uso en este ejemplo, usa tu creatividad.
+
+// Con some
+productosSome = productos.some( prod => prod.nombre === "Botella de agua");
+
+console.log(`(Some) Existe el producto "Botella de agua?" ${productosSome}`);
+
+// Con every
+productosEvery = productos.every( prod => prod.categoria =="Videojuego");
+
+console.log(`(Every) Todos los productos son de la categoría "Videojuego"? ${productosEvery}`);
+
+
+
+
