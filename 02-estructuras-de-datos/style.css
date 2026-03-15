@@ -1,3 +1,10 @@
+:root{
+        --fondo-blanco: #ffffff;
+    --borde: #d9e2ec;
+    --texto: #1f2937;
+    --eliminar: #dc2626;
+}
+
 /* Reset */
 *{
     margin: 0;
@@ -128,11 +135,13 @@ header,main{
     height: 25px;
     object-fit: cover;
 }
-
+/* carrito de compras */
 .carrito-contenedor{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+
 }
 
 #carrito-boton{
@@ -155,6 +164,127 @@ header,main{
     height: 25px;
     object-fit: cover;
 }
+
+/* hacer el menu desplegable del carrito al hacer hover */
+.carrito-contenedor #lista-compras-contenedor{
+    display: none;
+}
+
+.carrito-contenedor:hover #lista-compras-contenedor{
+    display: block;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.18);
+    
+    top:100%;
+    z-index: 1;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+/* tabla de compras */
+
+#lista-compras-contenedor h2{
+    color: var(--encabezado);
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+}
+
+#lista-compras {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--borde);
+    background-color: #fff;
+    max-height: 500px; 
+    display: block;
+    overflow-y: auto;
+}
+
+#lista-compras th{
+    font-size: 12px;
+    text-align: left;
+    padding: 12px 10px;
+
+}
+
+#lista-compras td{
+    padding: 10px;
+    border-bottom: 1px solid var(--borde);
+    color: var(--texto);
+    vertical-align: middle;
+}
+
+
+
+/* productos */
+
+
+.lista-producto-imagen{
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.lista-producto-nombre{
+    font-weight: 500;
+
+}
+
+.lista-producto-precio{
+    font-weight: 700;
+    color: #0f766e;
+
+}
+
+.lista-producto-borrar{
+    border: none;
+    background-color: var(--eliminar);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+
+}
+
+
+#vaciar-lista{
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--eliminar);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+@media (max-width: 640px){
+    .carrito-contenedor:hover #lista-compras-contenedor{
+        right: -12px;
+        width: 86vw;
+    }
+
+    #lista-compras th,
+    #lista-compras td{
+        padding: 8px 6px;
+        font-size: 10px;
+    }
+
+    .lista-producto-imagen{
+        width: 64px;
+        height: 44px;
+    }
+
+}
+
 
 
 /* el vídeo que está abajo del nav */

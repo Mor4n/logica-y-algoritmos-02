@@ -1,7 +1,7 @@
 
 
 const lista_compras_contenedor = document.querySelector("#lista-compras-contenedor");
-const catalogo_productos = document.querySelector(".catalogo-productos");
+const catalogo_productos = document.querySelectorAll(".catalogo-productos");
 const contenedor_productos = document.querySelector("#compras-tbody");
 const vaciar_lista = document.querySelector("#vaciar-lista");
 let listaDeCompras = [];
@@ -100,6 +100,7 @@ const obtenerProducto = (e) =>{
     // console.log(`Hola desde ${e.target.classList}`);
     // que se ejecute lo siguiente solo cuando el producto que presionemos, tenga la clase de producto agregar ( o sea el botón, si presionamos la imagen o un texto del producto, que no pase nada)
     if(e.target.classList.contains("producto-btn")){
+        
         const htmlProducto = e.target.parentElement; // de estar en el elemento botón, vamos atrás un nodo HTML y nos quedamos con el card-producto
 
         extraerDatos(htmlProducto);
@@ -112,7 +113,10 @@ const obtenerProducto = (e) =>{
 const iniciarEvents = () =>{
     
     // a cada producto del listado, si se da clic, va a poderse agregar a la lista
-    catalogo_productos.addEventListener("click", obtenerProducto);
+    catalogo_productos.forEach((catalogo) => {
+        // se le tiene que poner forEach porque .querySelector es solo 1 (el primero), en el caso de querySelectorAll es una lista, por lo tanto tengo que recorrer cada uno para darles este event listener
+        catalogo.addEventListener("click", obtenerProducto);
+    });
     contenedor_productos.addEventListener("click", eliminarProducto);
     vaciar_lista.addEventListener("click", () =>{
         // reseteo de arreglo
