@@ -46,3 +46,7 @@ Se desplegó en Github Pages a partir de este repositorio, puedes ver la página
 ## Fuentes:
 
 https://www.youtube.com/watch?v=UxrSeTSI8z0
+
+https://www.w3schools.com/jsref/jsref_reduce.asp
+https://www.w3schools.com/jsref/jsref_some.asp
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
