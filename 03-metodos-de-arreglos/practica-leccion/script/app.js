@@ -38,7 +38,7 @@ console.log(`Arreglo con solo nombre de productos:`, productosSoloNombres);
 
 // Muestra los resultados de la aplicación de cada métiodo en consola.
 
-// (Oppcional) Incluye alguno de los métodos faltantes (reduce, some, every, includes, etc.) con algún caso de uso en este ejemplo, usa tu creatividad.
+//! (Oppcional) Incluye alguno de los métodos faltantes (reduce, some, every, includes, etc.) con algún caso de uso en este ejemplo, usa tu creatividad.
 
 // Con some
 let productosSome = productos.some( prod => prod.nombre === "Botella de agua");
