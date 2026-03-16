@@ -82,9 +82,31 @@ console.log(`(Reduce) Precio total con 50% descuento de los productos de la cate
 
 let productosALaVenta = productos.reduce( (cadena,producto) => cadena+producto.nombre+" | ","")
 console.log(`(Reduce) Tenemos los siguientes productos a la venta ${productosALaVenta}`);
+console.log("---------");
 
 // reduce para encontrar el producto más caro de la categoría
 
-let productoMasCaroPorCategoria = productos.reduce((totalProductos, productos) => {
+console.log("(Reduce) Encontrar el producto más caro de cada categoria y devolverlo como objeto");
 
-});
+
+let productoMasCaroPorCategoria = productos.reduce((totalProductos, producto) => {
+    // si no existe la categoría en el acumulador
+    if (!(producto.categoria in totalProductos)) {
+        // la voy a agregar y le paso el objeto del producto actual
+        totalProductos[producto.categoria] = producto;
+        
+    }
+    // si ya existe la categoría, entonces comparo los precios
+    else if (producto.precio > totalProductos[producto.categoria].precio){
+
+        // Si producto.precio actual es mayor al que está guardado, entonces le pongo el objeto de producto actual que es mayor
+        totalProductos[producto.categoria] = producto;
+
+    }
+    
+    // RECORDAR QUE SIEMPRE SI SON => {} TENGO. QUE. TENER. RETURN.
+    return totalProductos
+
+},{}); // el valor inicial es un objeto vacio
+
+console.log(productoMasCaroPorCategoria);
