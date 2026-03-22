@@ -4,6 +4,8 @@
 
 const invitados = ["Ana", "Carlos", "Cecilia", "Daniel", "Diana", "Eduardo"];
 
+const invitados2 = ["Adriana", "Benjamin", "Carmelita", "Dante", "Ernesto", "Moran","Martinez","Roberto","Rodriguez","Sanchez"];
+
 function encontrarPareja(arr) {
     let izquierda = 0;
     let derecha = 1;
@@ -12,10 +14,41 @@ function encontrarPareja(arr) {
         let nombre1 = arr[izquierda];
         let nombre2 = arr[derecha];
         console.log(` Inicial - Izq ${izquierda} | Der ${derecha}`);
-
+        
         if(nombre1[0]===nombre2[0]){
-            return [nombre1,nombre2];
+           return [nombre1,nombre2];
         }
+
+        // como es ordenado se pondría asi
+        izquierda++;
+        derecha++;
+
+        
+        
+    }
+
+    return null; // Si no se encuentra ningún par
+}
+
+
+function encontrarVariasPareja(arr) {
+    let izquierda = 0;
+    let derecha = 1;
+    let nombres = []; // arreglo para guardar nombres 
+
+    while (derecha < arr.length) {
+        let nombre1 = arr[izquierda];
+        let nombre2 = arr[derecha];
+        console.log(` Inicial - Izq ${izquierda} | Der ${derecha}`);
+        
+        if(nombre1[0]===nombre2[0]){
+            nombres.push([nombre1,nombre2]);
+        }
+        // Si ya llegamos al final, que devuelva los nombres
+        if(derecha == arr.length-1){
+            return nombres;
+        }
+
 
         // como es ordenado se pondría asi
         izquierda++;
@@ -30,3 +63,4 @@ function encontrarPareja(arr) {
 
 console.log(encontrarPareja(invitados));
 // Resultado: ["Carlos", "Cecilia"]
+console.log("Encontrar varias parejas:",encontrarVariasPareja(invitados2));
