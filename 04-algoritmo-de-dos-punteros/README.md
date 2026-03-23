@@ -45,3 +45,4 @@ Se desplegó en Github Pages a partir de este repositorio, puedes ver la página
 
 ## Fuentes:
 
+https://www.freecodecamp.org/news/javascript-check-empty-string-checking-null-or-empty-in-js/
