@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Archivo", sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* formulario */
+#formulario {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+
+/* btones */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-agregar {
+    background-color: #9dffc6;
+    color: white;
+}
+
+
+#btn-enviar {
+    background-color: #4896ad;
+    color: white;
+}
+
+
+
+#lista-personas, section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/*  Nombres personas */
+#lista-personas p {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+/* Resultados */
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 8px;
+    padding: 10px;
+}
