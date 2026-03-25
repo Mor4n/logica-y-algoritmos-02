@@ -26,3 +26,10 @@ const text =
   "JavaScript es un lenguaje de programación increíble para aprender.";
 // TODO: Llama a la función y muestra el resultado
 console.log(findLongestWord(text)); // Resultado esperado: "programación"
+
+
+function palabraMasLargaSlidingWindow(texto){
+
+  
+
+}
