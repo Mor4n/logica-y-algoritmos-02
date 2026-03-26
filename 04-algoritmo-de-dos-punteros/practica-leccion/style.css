@@ -29,7 +29,7 @@ h2 {
     gap: 17.5px;
 }
 
-input[type="text"] {
+#input-nombre-persona {
     padding: 12px;
     border: 2px solid #ddd;
     font-size: 1rem;

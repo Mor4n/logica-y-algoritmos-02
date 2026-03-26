@@ -1,3 +1,8 @@
+
+let formulario = document.querySelector("#formulario");
+let input = document.querySelector("#input-oracion");
+let spanPalabraLarga = document.querySelector("#palabraLarga");
+
 function findLongestWord(text) {
   // TODO: Dividir el texto en palabras y almacenarlas en una variable
   
@@ -7,12 +12,13 @@ function findLongestWord(text) {
 
   // TODO: Recorrer el arreglo de palabras con un ciclo
     for (let i = 0; i < words.length; i++) {
+      let actualWord = words[i]; // guardo la palabra actual en una variable mejor
 
     // TODO: Comparar la longitud de la palabra actual con la más larga
-    if (words[i].length > longestWord.length) {
+    if (actualWord.length > longestWord.length) {
 
-    // Actualizar la palabra más larga
-    longestWord = words[i];
+      // Actualizar la palabra más larga
+      longestWord = words[i];
 
     }
 }
@@ -28,8 +34,13 @@ const text =
 console.log(findLongestWord(text)); // Resultado esperado: "programación"
 
 
-function palabraMasLargaSlidingWindow(texto){
+// funcion para obtener la palabra del formulario
+formulario.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let palabraMasLarga = findLongestWord(input.value);
 
-  
+    spanPalabraLarga.innerHTML=`${palabraMasLarga}`
 
-}
+
+})
+
