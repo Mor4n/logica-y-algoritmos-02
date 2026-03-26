@@ -29,7 +29,7 @@ A continuación se muestra una captura de pantalla del código funcionando en la
 
 ![Captura inicial del programa](./capturas/Captura1.png)
 ![Captura de pantalla de datos colocados en el input](./capturas/Captura2.png)
-![Captura de pantalla de datos añadidos al arreglo de regalos y mostrados en pantalla](./capturas/Captura.3png)
+![Captura de pantalla de datos añadidos al arreglo de regalos y mostrados en pantalla](./capturas/Captura3.png)
 ![Captura de pantalla de búsqueda de un dato en el arreglo usando recursión](./capturas/Captura4.png)
 ![Captura de pantalla de búsqueda de un dato que no existe en el arreglo](./capturas/Captura5.png)
 
