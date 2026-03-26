@@ -7,7 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <form id="formulario-lista-regalos">
+        <input type="text" class="input-regalos" id="input-lista-regalos" placeholder="Ingrese su lista de regalos (separelos con un ',')">
+        <button class="boton-enviar" type="submit">Agregar lista de regalos</button>
+    </form>
+
+    <form id="formulario-buscar-regalo">
+        <input type="text" class="input-regalos" id="input-buscar-regalo" placeholder="Ingrese un regalo a buscar">
+        <button class="boton-enviar" id="boton-buscar-regalo"type="submit">Buscar regalo</button>
+    </form>
+
+
+    <div id="contenedor-lista-regalos">
+        <h2>Lista de regalos:</h2>
+
+        <ul id="lista-regalos">
+
+        </ul>
+
+    </div>
+
+    <div id="contenedor-buscar-regalo">
+        <h2>El regalo se encuentra en: <span id="regalo-encontrado"></span></h2>
+        
+     </div>
+
     <script src="./script/app.js"></script>
 </body>
 </html>
