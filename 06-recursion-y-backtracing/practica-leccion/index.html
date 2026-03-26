@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <form id="formulario-lista-regalos">
+    <h1>Lección 6 - Recursión y backtracing: Lista de regalos</h1>
+
+    <form class="formulario" id="formulario-lista-regalos">
         <input type="text" class="input-regalos" id="input-lista-regalos" placeholder="Ingrese su lista de regalos (separelos con un ',')">
         <button class="boton-enviar" type="submit">Agregar lista de regalos</button>
     </form>
 
-    <form id="formulario-buscar-regalo">
+    <form class="formulario" id="formulario-buscar-regalo">
         <input type="text" class="input-regalos" id="input-buscar-regalo" placeholder="Ingrese un regalo a buscar">
         <button class="boton-enviar" id="boton-buscar-regalo"type="submit">Buscar regalo</button>
     </form>
 
 
-    <div id="contenedor-lista-regalos">
+    <div class="contenedores" id="contenedor-lista-regalos">
         <h2>Lista de regalos:</h2>
 
         <ul id="lista-regalos">
@@ -28,8 +33,8 @@
 
     </div>
 
-    <div id="contenedor-buscar-regalo">
-        <h2>El regalo se encuentra en: <span id="regalo-encontrado"></span></h2>
+    <div class="contenedores" id="contenedor-buscar-regalo">
+        <h2>Resultado de búsqueda: <span id="regalo-encontrado"></span></h2>
         
      </div>
 
