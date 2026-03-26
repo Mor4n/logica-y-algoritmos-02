@@ -25,8 +25,8 @@
 
 A continuación se muestra una captura de pantalla del código funcionando en la consola del navegador:
 
-![Captura de pantalla de HTML junto con el resultado del ejercicio en consola](./img/Captura1.png)
-![Captura de pantalla del HTML con el resultado de la palabra más larga](./img/Captura2.png)
+![Captura de pantalla de HTML junto con el resultado del ejercicio en consola](./capturas/Captura1.png)
+![Captura de pantalla del HTML con el resultado de la palabra más larga](./capturas/Captura2.png)
 
 
 
@@ -37,7 +37,7 @@ Abra el archivo
 en su navegador y revise el sitio web para probar la funcionalidad del mismo
 
 También puede mirar el código de JavaScript abriendo el archivo
-```./practica-leccion/script/script.js```
+```./practica-leccion/script/app.js```
 dentro de su editor de código preferido o dentro de Github.
 
 ## Despliegue
