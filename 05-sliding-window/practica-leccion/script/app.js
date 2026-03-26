@@ -37,9 +37,14 @@ console.log(findLongestWord(text)); // Resultado esperado: "programación"
 // funcion para obtener la palabra del formulario
 formulario.addEventListener("submit", (e)=>{
     e.preventDefault();
-    let palabraMasLarga = findLongestWord(input.value);
+    
+    if(input.value.trim() === ""){
+      alert("Por favor, ingrese una palabra, ya que el input está vacío")
+    }else{
+      let palabraMasLarga = findLongestWord(input.value);
 
-    spanPalabraLarga.innerHTML=`${palabraMasLarga}`
+      spanPalabraLarga.innerHTML=`${palabraMasLarga}`
+    }
 
 
 })
