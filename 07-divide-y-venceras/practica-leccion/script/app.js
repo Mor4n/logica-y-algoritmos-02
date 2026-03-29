@@ -24,3 +24,34 @@ function findMax(arr) {
 const numbers = [3, 8, 2, 10, 5, 7];
 console.log(findMax(numbers)); // Salida esperada: 10
 
+// declaración de selectores de HTML
+let formulario = document.querySelector("#formulario")
+let span_resultado = document.querySelector("#resultado")
+
+formulario.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    
+    let input_arreglo = document.querySelector("#input-arreglo").value
+
+    if(input_arreglo.trim()==""){
+        alert("Por favor, ingrese números en el input")
+    }
+
+    // uso split que se usó en las lecciones pasadas para separar el valor del input en base al ","
+    let arreglo = input_arreglo.split(",");
+
+    // ahora lo que quiero es que por ejemplo, si el usuario pone "1, 2, 3,4, 5", se borren los espacios, para eso debo transformar el arreglo y para ello usaré el map, para a cada elemento del arreglo, aplicarle una operación, en este caso, el trim para quitar espacios
+    arreglo = arreglo.map( elemento => elemento.trim())
+
+    // console.log(arreglo);
+
+    let resultadoMaximo = findMax(arreglo);
+    console.log(`El número máximo es: ${resultadoMaximo}`);
+    
+
+    span_resultado.innerHTML = `${resultadoMaximo}`
+    
+
+
+})
+
