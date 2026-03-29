@@ -41,7 +41,7 @@ formulario.addEventListener("submit",(e)=>{
     let arreglo = input_arreglo.split(",");
 
     // ahora lo que quiero es que por ejemplo, si el usuario pone "1, 2, 3,4, 5", se borren los espacios, para eso debo transformar el arreglo y para ello usaré el map, para a cada elemento del arreglo, aplicarle una operación, en este caso, el trim para quitar espacios
-    arreglo = arreglo.map( elemento => elemento.trim())
+    arreglo = arreglo.map( elemento => parseFloat(elemento.trim())) // el parseFloat se tuvo que poner para convertir el texto a flotante 
 
     // console.log(arreglo);
 
