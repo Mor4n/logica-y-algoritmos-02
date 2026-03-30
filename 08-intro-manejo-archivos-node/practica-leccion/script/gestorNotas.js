@@ -75,14 +75,13 @@ const eliminarNota = (titulo) => {
 // mostrarNotas();
 // eliminarNota('Compras');
 
-let opcion;
 let titulo="";
 let contenido = "";
 
-do {
+const menu = ()=>{
     console.log(`
         ----------------------------------------
-        Lección 8 - Gestor de notas profesional:
+        Lección 8 - Gestor de notas personales:
         ----------------------------------------
         1. Crear nota
         2. Ver notas
@@ -90,33 +89,51 @@ do {
         4. Salir
         `);
     
-        rl.question("Escriba una opción: ", respuesta => opcion = respuesta)
-    
-    
-    switch (opcion) {
-        case "1":
+        rl.question("Escriba una opción: ", opcion => {
+        
+            if(opcion=="1"){
+                menuAgregarNota();
+
+            }else if (opcion =="2"){
+                menuEliminarNota();
+
+            }
+            else if (opcion=="3"){
+                menuMostrarNotas();
+
+            }
+            else{
+                console.log(`La opción ingresada es inválida, ingrese una opción entre 1 al 4`);
+                
+            }
+
+        });
+        
+    }
+
+
+const menuAgregarNota = () =>{
             console.log(`
             ----------------------------------------
             Crear nota:
             ----------------------------------------
             `);
-            rl.question("Ingrese el título para su nota: ", respuesta => titulo = respuesta)
-            rl.question("Ingrese el contenido para su nota: ", respuesta => contenido = respuesta)
+            titulo = rl.question("Ingrese el título para su nota: ", () =>{})
+            contenido = rl.question("Ingrese el contenido para su nota: ", ()=>{})
             agregarNota(titulo,contenido);
-            
-            break;
-        
-        case "2":
+}
+
+const menuMostrarNotas = () =>{
             console.log(`
             ----------------------------------------
             Ver notas:
             ----------------------------------------
             `);
             mostrarNotas();
-            
-            break;
 
-        case "3":
+}
+
+const menuEliminarNota = () =>{
             console.log(`
             ----------------------------------------
             Eliminar una nota:
@@ -124,13 +141,7 @@ do {
             `);
             rl.question("Ingrese el título de la nota a eliminar: ", respuesta => titulo = respuesta)
             eliminarNota(titulo);
-            
-            break;
-    
-        default:
-            console.log("Opción inválida, elija una opción entre 1 al 4");
-            break;
-    }
+}
 
 
-} while (opcion!="4");
+menu();
