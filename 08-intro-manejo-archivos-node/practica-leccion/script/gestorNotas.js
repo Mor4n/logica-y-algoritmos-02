@@ -118,9 +118,19 @@ const menuAgregarNota = () =>{
             Crear nota:
             ----------------------------------------
             `);
-            titulo = rl.question("Ingrese el título para su nota: ", () =>{})
-            contenido = rl.question("Ingrese el contenido para su nota: ", ()=>{})
-            agregarNota(titulo,contenido);
+
+            rl.question("Ingrese el título para su nota: ", (respuesta) =>{
+            titulo = respuesta
+
+            rl.question("Ingrese el contenido para su nota: ", (respuesta)=>{
+
+                contenido = respuesta
+
+                agregarNota(titulo,contenido);
+                
+            })
+
+            })
 }
 
 const menuMostrarNotas = () =>{

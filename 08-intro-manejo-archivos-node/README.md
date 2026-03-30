@@ -53,3 +53,4 @@ Se desplegó en Github Pages a partir de este repositorio, puedes ver la página
 ## Fuentes:
 
 https://nodejs.org/api/readline.html
+https://medium.com/@muhamadfaisallilham/building-an-interactive-cli-program-using-node-js-readline-without-built-in-methods-a220a2e069dd
