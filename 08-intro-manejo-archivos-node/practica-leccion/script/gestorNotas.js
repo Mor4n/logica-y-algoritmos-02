@@ -80,9 +80,9 @@ let contenido = "";
 
 const menu = ()=>{
     console.log(`
-        ----------------------------------------
+--------------------------------------------------------------------------------
         Lección 8 - Gestor de notas personales:
-        ----------------------------------------
+--------------------------------------------------------------------------------
         1. Crear nota
         2. Ver notas
         3. Eliminar nota
@@ -101,6 +101,11 @@ const menu = ()=>{
                 menuEliminarNota();
 
             }
+            else if (opcion=="4"){
+                console.log("Gracias por usar el programa :'))) ! ");
+                return;
+                
+            }
             else{
                 console.log(`La opción ingresada es inválida, ingrese una opción entre 1 al 4`);
                 
@@ -113,9 +118,9 @@ const menu = ()=>{
 
 const menuAgregarNota = () =>{
             console.log(`
-            ----------------------------------------
-            Crear nota:
-            ----------------------------------------
+----------------------------------------
+Crear nota:
+----------------------------------------
             `);
 
             rl.question("Ingrese el título para su nota: ", (respuesta) =>{
@@ -126,31 +131,35 @@ const menuAgregarNota = () =>{
                 contenido = respuesta;
 
                 agregarNota(titulo,contenido);
-                
+                menu();
             })
 
             })
+
+            
 }
 
 const menuMostrarNotas = () =>{
             console.log(`
-            ----------------------------------------
-            Ver notas:
-            ----------------------------------------
+----------------------------------------
+Ver notas:
+----------------------------------------
             `);
             mostrarNotas();
+            menu();
 
 }
 
 const menuEliminarNota = () =>{
             console.log(`
-            ----------------------------------------
-            Eliminar una nota:
-            ----------------------------------------
+----------------------------------------
+Eliminar una nota:
+----------------------------------------
             `);
             rl.question("Ingrese el título de la nota a eliminar: ", (respuesta) => {
                 titulo = respuesta;
                 eliminarNota(titulo);
+                menu();
             })
             
 }
