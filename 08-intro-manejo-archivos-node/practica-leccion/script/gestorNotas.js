@@ -95,11 +95,10 @@ const menu = ()=>{
                 menuAgregarNota();
 
             }else if (opcion =="2"){
-                menuEliminarNota();
-
+                menuMostrarNotas();
             }
             else if (opcion=="3"){
-                menuMostrarNotas();
+                menuEliminarNota();
 
             }
             else{
@@ -120,11 +119,11 @@ const menuAgregarNota = () =>{
             `);
 
             rl.question("Ingrese el título para su nota: ", (respuesta) =>{
-            titulo = respuesta
+            titulo = respuesta;
 
             rl.question("Ingrese el contenido para su nota: ", (respuesta)=>{
 
-                contenido = respuesta
+                contenido = respuesta;
 
                 agregarNota(titulo,contenido);
                 
@@ -149,8 +148,11 @@ const menuEliminarNota = () =>{
             Eliminar una nota:
             ----------------------------------------
             `);
-            rl.question("Ingrese el título de la nota a eliminar: ", respuesta => titulo = respuesta)
-            eliminarNota(titulo);
+            rl.question("Ingrese el título de la nota a eliminar: ", (respuesta) => {
+                titulo = respuesta;
+                eliminarNota(titulo);
+            })
+            
 }
 
 
