@@ -4,9 +4,9 @@ const fs = require("fs"); // importo modulo js
 const readline = require("readline"); // modulo tipo Console.ReadLine() o ReadKey de c sharp
 
 // configuración de readline
-// const { stdin: input, stdout: output } = require('node:process');
-// const { info } = require("node:console");
-// const rl = readline.createInterface({ input, output });
+const { stdin: input, stdout: output } = require('node:process');
+const { info } = require("node:console");
+const rl = readline.createInterface({ input, output });
 
 // rl.question("Ingrese el dato a mostrar: ", (respuesta)=>console.log(`Escribiste ${respuesta}`))
 
@@ -75,7 +75,9 @@ const eliminarNota = (titulo) => {
 // mostrarNotas();
 // eliminarNota('Compras');
 
-let opcion = "";
+let opcion;
+let titulo="";
+let contenido = "";
 
 do {
     console.log(`
@@ -88,23 +90,47 @@ do {
         4. Salir
         `);
     
+        rl.question("Escriba una opción: ", respuesta => opcion = respuesta)
+    
     
     switch (opcion) {
-        case 1:
+        case "1":
+            console.log(`
+            ----------------------------------------
+            Crear nota:
+            ----------------------------------------
+            `);
+            rl.question("Ingrese el título para su nota: ", respuesta => titulo = respuesta)
+            rl.question("Ingrese el contenido para su nota: ", respuesta => contenido = respuesta)
+            agregarNota(titulo,contenido);
             
             break;
         
-        case 1:
+        case "2":
+            console.log(`
+            ----------------------------------------
+            Ver notas:
+            ----------------------------------------
+            `);
+            mostrarNotas();
             
             break;
 
-        case 1:
+        case "3":
+            console.log(`
+            ----------------------------------------
+            Eliminar una nota:
+            ----------------------------------------
+            `);
+            rl.question("Ingrese el título de la nota a eliminar: ", respuesta => titulo = respuesta)
+            eliminarNota(titulo);
             
             break;
     
         default:
+            console.log("Opción inválida, elija una opción entre 1 al 4");
             break;
     }
 
 
-} while (opcion!=4);
+} while (opcion!="4");
