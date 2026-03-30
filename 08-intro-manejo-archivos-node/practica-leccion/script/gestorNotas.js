@@ -71,7 +71,40 @@ const eliminarNota = (titulo) => {
 }
 
 //? Ejecución de ejemplo
-agregarNota('Compras', 'Comprar leche y pan.');
-mostrarNotas();
-eliminarNota('Compras');
+// agregarNota('Compras', 'Comprar leche y pan.');
+// mostrarNotas();
+// eliminarNota('Compras');
 
+let opcion = "";
+
+do {
+    console.log(`
+        ----------------------------------------
+        Lección 8 - Gestor de notas profesional:
+        ----------------------------------------
+        1. Crear nota
+        2. Ver notas
+        3. Eliminar nota
+        4. Salir
+        `);
+    
+    
+    switch (opcion) {
+        case 1:
+            
+            break;
+        
+        case 1:
+            
+            break;
+
+        case 1:
+            
+            break;
+    
+        default:
+            break;
+    }
+
+
+} while (opcion!=4);
