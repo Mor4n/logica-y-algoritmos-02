@@ -18,13 +18,15 @@ const agregarNota = (titulo, contenido)=>{
     
     let notas = [];
 
+    const fecha = new Date().toLocaleString('es-MX'); 
+
     if( fs.existsSync(ruta) ){
         let informacion_archivo = fs.readFileSync(ruta,"utf8");
         notas = JSON.parse(informacion_archivo);
 
     }
 
-    const nuevaNota = { titulo, contenido };
+    const nuevaNota = { titulo, contenido,fecha };
     notas.push(nuevaNota);
 
     fs.writeFileSync(ruta,JSON.stringify(notas));
@@ -41,7 +43,7 @@ const mostrarNotas = () => {
     
         let informacion_archivo = fs.readFileSync(ruta,"utf8");
         notas = JSON.parse(informacion_archivo);
-        notas.forEach( elemento => console.log(`${elemento["titulo"]}:  ${elemento["contenido"]}`));
+        notas.forEach( (elemento,i) => console.log(`${i}.- Título: ${elemento["titulo"]} - Contenido: ${elemento["contenido"]} (Nota guardada el: ${elemento["fecha"]} )`));
 
   
     } 

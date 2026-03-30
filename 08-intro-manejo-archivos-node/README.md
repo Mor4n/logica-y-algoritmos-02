@@ -51,4 +51,7 @@ Se desplegó en Github Pages a partir de este repositorio, puedes ver la página
 ## Fuentes:
 
 https://nodejs.org/api/readline.html
+https://stackoverflow.com/questions/65374880/readline-not-pausing-for-or-allowing-input
 https://medium.com/@muhamadfaisallilham/building-an-interactive-cli-program-using-node-js-readline-without-built-in-methods-a220a2e069dd
+https://stackoverflow.com/questions/74581519/how-to-stop-infinite-loop-when-using-callback-inside-while-loop-in-js
+https://www.youtube.com/watch?v=jXaBeZ19RB4
