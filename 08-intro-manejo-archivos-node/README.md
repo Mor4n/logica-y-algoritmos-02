@@ -36,8 +36,6 @@ Abra el archivo
 en su navegador y revise el sitio web para probar la funcionalidad del mismo
 
 También puede mirar el código de JavaScript abriendo el archivo
-```./practica-leccion/script/app.js```
-
 ```./practica-leccion/script/gestorNotas.js```
 dentro de su editor de código preferido o dentro de Github.
 

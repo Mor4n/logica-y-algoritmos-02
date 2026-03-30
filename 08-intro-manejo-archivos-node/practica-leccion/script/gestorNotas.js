@@ -103,6 +103,7 @@ const menu = ()=>{
             }
             else if (opcion=="4"){
                 console.log("Gracias por usar el programa :'))) ! ");
+                rl.close();
                 return;
                 
             }
