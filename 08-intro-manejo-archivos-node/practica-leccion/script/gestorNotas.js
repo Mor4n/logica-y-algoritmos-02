@@ -12,6 +12,7 @@ const rl = readline.createInterface({ input, output });
 const ruta = "./notas.json";
 
 //? Agregar nota al archivo
+let id = 0;
 
 const agregarNota = (titulo, contenido)=>{
     
@@ -22,16 +23,26 @@ const agregarNota = (titulo, contenido)=>{
     if( fs.existsSync(ruta) ){
         let informacion_archivo = fs.readFileSync(ruta,"utf8");
         notas = JSON.parse(informacion_archivo);
+        id = obtenerUltimoId(notas);
+        id++; // le añado en 1 el id para que sea el siguiente
 
     }
 
-    const nuevaNota = { titulo, contenido,fecha };
+    const nuevaNota = { id, titulo, contenido,fecha };
     notas.push(nuevaNota);
 
     fs.writeFileSync(ruta,JSON.stringify(notas));
 
     console.log('Nota agregada correctamente');
 
+}
+
+const obtenerUltimoId = (notas) =>{
+    
+    // guardo el ultimo elemento añadido
+    let ultimoElemento = notas[notas.length-1]
+    // devuelvo su id
+    return ultimoElemento["id"]
 }
 
 //? Listar todas las notas que están guardadas
@@ -42,7 +53,7 @@ const mostrarNotas = () => {
     
         let informacion_archivo = fs.readFileSync(ruta,"utf8");
         notas = JSON.parse(informacion_archivo);
-        notas.forEach( (elemento,i) => console.log(`${i}.- Título: ${elemento["titulo"]} - Contenido: ${elemento["contenido"]} (Nota guardada el: ${elemento["fecha"]} )`));
+        notas.forEach( (elemento) => console.log(`${elemento["id"]}.- Título: ${elemento["titulo"]} - Contenido: ${elemento["contenido"]} (Nota guardada el: ${elemento["fecha"]} )`));
 
   
     } 
@@ -55,17 +66,25 @@ const mostrarNotas = () => {
 
 //? Eliminar nota
 
-const eliminarNota = (titulo) => {
+const eliminarNota = (valorAEliminar) => {
   if (fs.existsSync(ruta)) {
 
     let informacion_archivo = fs.readFileSync(ruta,"utf-8");
     notas = JSON.parse(informacion_archivo);
 
-    notas = notas.filter( elemento => elemento["titulo"]!==titulo);
+    notas = notas.filter(elemento => elemento.titulo.toLowerCase() !== valorAEliminar.toLowerCase() && elemento.id !== Number(valorAEliminar));
 
-    fs.writeFileSync(ruta, JSON.stringify(notas));
+    // si ya no hay notas después de borrarlo
+    if (notas.length === 0) {
+      // elimino también el archivo
+      fs.unlinkSync(ruta);
+      console.log("Se eliminó la última nota y el archivo fue borrado.");
+    } else {
+        // si siguen quedando notas, sobreescribo el archivo
+      fs.writeFileSync(ruta, JSON.stringify(notas));
+      console.log(`Nota ${valorAEliminar} eliminada.`);
+    }
 
-    console.log(`Nota con título "${titulo}" eliminada.`);
   } else {
     console.log('No hay notas para eliminar.');
   }
@@ -110,6 +129,7 @@ const menu = ()=>{
             }
             else{
                 console.log(`La opción ingresada es inválida, ingrese una opción entre 1 al 4`);
+                menu();
                 
             }
 
@@ -158,7 +178,7 @@ const menuEliminarNota = () =>{
 Eliminar una nota:
 ----------------------------------------
             `);
-            rl.question("Ingrese el título de la nota a eliminar: ", (respuesta) => {
+            rl.question("Ingrese el id o el título de la nota a eliminar: ", (respuesta) => {
                 titulo = respuesta;
                 eliminarNota(titulo);
                 menu();

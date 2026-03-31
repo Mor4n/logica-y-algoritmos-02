@@ -1,6 +1,8 @@
 
 // File system: fs nos da una API para interactuar con el sistema de archivos, con ello se puede escribir, leer, eliminar y renombrar archivos o directorios
 
+// Filesync lee o escribe desde la memoria (RAM)
+
 const fs = require('fs'); // Importo el módulo fs
 
 const rutaDeArchivo = './test.txt'; 
