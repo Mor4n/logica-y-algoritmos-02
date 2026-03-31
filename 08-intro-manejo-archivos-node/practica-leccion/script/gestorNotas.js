@@ -5,7 +5,6 @@ const readline = require("readline"); // modulo tipo Console.ReadLine() o ReadKe
 
 // configuración de readline
 const { stdin: input, stdout: output } = require('node:process');
-const { info } = require("node:console");
 const rl = readline.createInterface({ input, output });
 
 // rl.question("Ingrese el dato a mostrar: ", (respuesta)=>console.log(`Escribiste ${respuesta}`))
@@ -129,9 +128,9 @@ Crear nota:
             rl.question("Ingrese el título para su nota: ", (respuesta) =>{
             titulo = respuesta;
 
-            rl.question("Ingrese el contenido para su nota: ", (respuesta)=>{
+            rl.question("Ingrese el contenido para su nota: ", (respuesta2)=>{
 
-                contenido = respuesta;
+                contenido = respuesta2;
 
                 agregarNota(titulo,contenido);
                 menu();
